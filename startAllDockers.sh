@@ -1,4 +1,3 @@
-#find ./ -name runInDocker.sh -type f -exec /bin/sh '{}' \;
 for f in ./**/*/runInDocker.sh
 do
   echo $f
@@ -7,5 +6,3 @@ do
   ./runInDocker.sh
   cd -  
 done
-#find -name '*runInDocker.sh' -printf '%h\n' | sort -u
-#-name asdf1234
