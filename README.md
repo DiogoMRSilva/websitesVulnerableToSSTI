@@ -1,4 +1,4 @@
-#This projetc has very simple websites to learn exploiting Server Side Template Injections(SSTI). It might also be used to test automated vulnerability scanning tools.Some of the Servers aren't working
+#This project has very simple websites to learn exploiting Server Side Template Injections(SSTI). It might also be used to test automated vulnerability scanning tools.Some of the Servers aren't working
 
 
 
@@ -13,9 +13,9 @@
 | (code eval)         | Python     |            | ✓      | ✓    | ✓      | 5004 | na                      |        
 | (code exec)         | Python     |            | ✓      | ✓    | ✓      | 5005 | na                      |       
 | Smarty              | PHP        |            | ✓      | ✓    | ✓      | 5020 | {%s}                    |       
-| Smarty(secure mode) | PHP        |            | ✓      | ✓    | ×      | 5021 | {%s}                    |        
+| Smarty(secure mode) | PHP        |            |        | ✓    | ×      | 5021 | {%s}                    |        
 | Twig                | PHP        |            | ✓      | ✓    | ×      | 5022 | {{%s}}                  |       
-| (code eval)         | PHP        | ✓          | ✓      | ✓    | ✓      | 5023 | na                      |        
+| (code eval)         | PHP        |            | ✓      | ✓    | ✓      | 5023 | na                      |        
 | FreeMarker          | Java       |            | ✓      | ✓    | ✓      | 5051 | <#%s > ${%s}            |        
 | Velocity            | Java       |            | ✓      | ✓    | ✓      | 5052 | #set($x=1+1)${x}        |        
 | Thymeleaf           | Java       |            |        | ✓    | ~      | 5053 | <p th:text="${%s}"></p> |      
