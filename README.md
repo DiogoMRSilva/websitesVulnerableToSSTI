@@ -1,10 +1,13 @@
-#This project has very simple websites to learn exploiting Server Side Template Injections(SSTI). It might also be used to test automated vulnerability scanning tools.Some of the Servers aren't working
+
+# Vulnerable websites
+This project has very simple websites to learn how to exploit Server Side Template Injections(SSTI). It might also be used to test automated vulnerability scanning tools.Some of the Servers aren't working
+
 
 
 
 # List of Severs:
 
-| Engine              | Language   | Burp       | tplmap | done | exploi | port | tags                    |
+| Engine              | Language   | Burp       | tplmap | done | exploit | port | tags                    |
 | ---                 | ---        | ---        | ---    | ---  | ---    | ---  | ---                     | 
 | jinja2              | Python     |            | ✓      | ✓    | ✓      | 5000 | {{%s}}                  |       
 | Mako                | Python     |            | ✓      | ✓    | ✓      | 5001 | ${%s}                   |        
@@ -34,7 +37,7 @@
 | (code eval)         | Ruby       |            | ✓      | ✓    | ✓      | 5082 | na                      |   
 
 
-#Some exploit development sources:
+# Some exploit development sources:
 https://nvisium.com/blog/2016/03/09/exploring-ssti-in-flask-jinja2/
 https://nvisium.com/blog/2016/03/11/exploring-ssti-in-flask-jinja2-part-ii/
 https://ajinabraham.com/blog/server-side-template-injection-in-tornado
