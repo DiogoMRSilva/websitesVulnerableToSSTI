@@ -16,7 +16,7 @@ This project has very simple websites to learn how to exploit Server Side Templa
 | (code eval)         | Python     |            | ✓      | ✓    | ✓      | 5004 | na                      |        
 | (code exec)         | Python     |            | ✓      | ✓    | ✓      | 5005 | na                      |       
 | Smarty              | PHP        |            | ✓      | ✓    | ✓      | 5020 | {%s}                    |       
-| Smarty(secure mode) | PHP        |            |        | ✓    | ×      | 5021 | {%s}                    |        
+| Smarty (secure mode) | PHP        |            |        | ✓    | ×      | 5021 | {%s}                    |        
 | Twig                | PHP        |            | ✓      | ✓    | ×      | 5022 | {{%s}}                  |       
 | (code eval)         | PHP        |            | ✓      | ✓    | ✓      | 5023 | na                      |        
 | FreeMarker          | Java       |            | ✓      | ✓    | ✓      | 5051 | <#%s > ${%s}            |        
@@ -39,8 +39,12 @@ This project has very simple websites to learn how to exploit Server Side Templa
 
 # Some exploit development sources:
 https://nvisium.com/blog/2016/03/09/exploring-ssti-in-flask-jinja2/
+
 https://nvisium.com/blog/2016/03/11/exploring-ssti-in-flask-jinja2-part-ii/
+
 https://ajinabraham.com/blog/server-side-template-injection-in-tornado
+
 https://github.com/epinna/tplmap
+
 http://blog.portswigger.net/2015/08/server-side-template-injection.html
 
