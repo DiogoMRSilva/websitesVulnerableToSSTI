@@ -31,7 +31,7 @@ def base():
 
 @app.route('/stored',methods=['GET', 'POST'])
 def stored():
-    f = open("demofile.txt", "r")
+    f = open("storage.txt", "r")
     name = f.read()
     f.close()
 	
