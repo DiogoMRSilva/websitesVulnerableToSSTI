@@ -7,10 +7,12 @@ app = Flask(__name__)
 
 @app.route('/',methods=['GET', 'POST'])
 def base():
-    person = ""
+    person = "1"
     if request.method == 'POST':
       if request.form['name']:
         person = request.form['name']
+        if not person.isdigit():
+          person = "0"
 	
     template = '<!DOCTYPE html><html><body>\
     <form action="/" method="post">\
