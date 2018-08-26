@@ -34,7 +34,9 @@ This project has very simple websites to learn how to exploit Server Side Templa
 | vuejs               | JavaScript | ✓   | ✓    | ✓~     | ✓    | ✓      | 5068 | {{%s}}                  | 
 | Slim                | Ruby       | ×   | ✓    | x       | ✓    | ✓      | 5080 | #{%s}                   | 
 | ERB                 | Ruby       | ✓   | ✓    | ✓      | ✓    | ✓      | 5081 | <%=%s%>                 | 
-| (code eval)         | Ruby       | -   | -    | -      | ✓    | -      | 5082 | na                      |   
+| (code eval)         | Ruby       | -   | -    | -      | ✓    | -      | 5082 | na                      |
+| go                  | go         | x   | x    | x      | ✓    |        | 5090 | na                      |
+
 
 ✓ - says it is vulnerable/is done
 
