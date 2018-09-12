@@ -11,8 +11,6 @@ def base():
     if request.method == 'POST':
       if request.form['name']:
         person = request.form['name']
-        if not person.isdigit():
-          person = "0"
 	
     template = '<!DOCTYPE html><html><body>\
     <form action="/" method="post">\
