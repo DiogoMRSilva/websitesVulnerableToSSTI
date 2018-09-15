@@ -21,7 +21,7 @@ This project has very simple websites to learn how to exploit Server Side Templa
 | (code eval)         | PHP        | -   | -    | -      | ✓    | -      | 5023 | na                      |        
 | FreeMarker          | Java       | ✓   | ✓    | ✓     | ✓    | ✓      | 5051 | <#%s > ${%s}            |        
 | Velocity            | Java       | ✓   | ✓    | ✓     | ✓    | ✓      | 5052 | #set($x=1+1)${x}        |        
-| Thymeleaf           | Java       | ×   | ✓    | x      | ✓    | ~      | 5053 | <p th:text="${%s}"></p> |      
+| Thymeleaf           | Java       | ×   | ✓    | x      | ✓    | x      | 5053 | <p th:text="${%s}"></p> |      
 | Groovy*             | Java       |     |      |        | ×    | ×      | ×    | ×                       |     
 | jade                | Java       |     |      |        | ×    | ×      | ×    | ×                       |     
 | jade                | Nodejs     | ✓   | ✓   | ✓      | ✓    | ✓      | 5061 | #{%s}                   |     
