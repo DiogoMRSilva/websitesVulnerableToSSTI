@@ -56,7 +56,16 @@ This project has very simple websites to learn how to exploit Server Side Templa
 |Input inserted in the middle of template code math operations|x|x|✓|6003|
 |Input inserted in the middle of template code text|yes as code injection|x|✓|6005|
 |Non Vulnerable |- |-|-|6004|
-All this Severs were made with Mako template engine Due to the exploiting simplicity and the fact that all of the scanners detect the vulnerability in the simple case. 
+All this Severs were made with Mako template engine Due to the exploiting simplicity and the fact that all the scanners detect the vulnerability in the simple case. 
+
+# Generalization tests for SSTI scanners:
+|Test Case | Burp | ZAP | tplmap | port|
+| ---      | ---  | --- |  ---   | ---|
+|{} | | | |6010|
+|${} | | | |6011|
+|{{}}| | | |6012|
+|<%=  %>| | | |6013|
+
 
 
 
