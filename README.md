@@ -61,10 +61,12 @@ All this Severs were made with Mako template engine Due to the exploiting simpli
 # Generalization tests for SSTI scanners:
 |Test Case | Burp | ZAP | tplmap | port|
 | ---      | ---  | --- |  ---   | ---|
-|{} | | | |6010|
-|${} | | | |6011|
-|{{}}| | | |6012|
-|<%=  %>| | | |6013|
+|{ } Python Eval | | |✓|6010|
+|${ } Python Eval| | |✓|6011|
+|{{ }} Python Eval| | |✓|6012|
+|<%=  %> Python Eval| | |x|6013|
+|#{ } Python Eval| | |x|6014|
+|{{= }} Python Eval| | |x|6015|
 
 
 

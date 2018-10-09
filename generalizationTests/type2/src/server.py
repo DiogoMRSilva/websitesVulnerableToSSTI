@@ -11,7 +11,7 @@ def base():
     if request.method == 'POST':
       if request.form['name']:
         person = request.form['name']
-        regex = r"{{([^}]*)}}"
+        regex = r"{{(.*?)}}"
         matches = re.finditer(regex, person, re.MULTILINE)
         for matchNum, match in enumerate(matches):
             eval_result = eval(match.group(1))

@@ -1,8 +1,8 @@
 import re
 
-person = "xx{{\"asdasd\"+\"lala\"}} }} {1+1}xxx"
+person = "xx<%=\"asda\"+\"lala\"%>  %> #{1+1}xxx}"
 
-regex = r"{{(.*?)}}"
+regex = r"#{(.*?)}"
 matches = re.finditer(regex, person, re.MULTILINE)
 for matchNum, match in enumerate(matches):
     eval_result = eval(match.group(1))

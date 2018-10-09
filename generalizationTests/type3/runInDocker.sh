@@ -5,5 +5,5 @@ else
     IP=$1
 fi
 
-docker build -t generalization1 .
-docker run -d -i -p $IP:6013:5000 -w /home generalization1 sh ./run.sh 
+docker build -t generalization3 .
+docker run -d -i -p $IP:6013:5000 -w /home generalization3 sh ./run.sh 
