@@ -56,7 +56,26 @@ This project has very simple websites to learn how to exploit Server Side Templa
 |Input inserted in the middle of template code math operations|x|x|✓|6003|
 |Input inserted in the middle of template code text|yes as code injection|x|✓|6005|
 |Non Vulnerable |- |-|-|6004|
-All this Severs were made with Mako template engine Due to the exploiting simplicity and the fact that all of the scanners detect the vulnerability in the simple case. 
+All this Severs were made with Mako template engine Due to the exploiting simplicity and the fact that all the scanners detect the vulnerability in the simple case. 
+
+# Generalization tests for SSTI scanners:
+|Test Case | Burp | ZAP | tplmap | port|
+| ---      | ---  | --- |  ---   | ---|
+|{ } Python Eval |✓| |✓|6010|
+|${ } Python Eval|✓| |✓|6011|
+|{{ }} Python Eval|✓| |✓|6012|
+|<%=  %> Python Eval|✓| |x|6013|
+|#{ } Python Eval|x| |x|6014|
+|{{= }} Python Eval|x| |x|6015|
+| | | | | |
+|{ } Ruby Eval | | |x|6020|
+|${ } Ruby Eval| | |x|6021|
+|{{ }} Ruby Eval| | |YBNE Nunjucks|6022|
+|<%=  %> Ruby Eval| | |✓ Erb|6023|
+|#{ } Ruby Eval| | |x|6024|
+|{{= }} Ruby Eval| | |x|6025|
+These tests are used to know if the scanner is able to generalize the tags it knows to other templates that have the same tag
+what these tests do is to replate the template code zones by the evaluations of its content as a template would do.
 
 
 
