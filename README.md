@@ -12,7 +12,7 @@ This project has very simple websites to learn how to exploit Server Side Templa
 | jinja2              | Python     | ✓   | ✓    | ✓      | ✓    | ✓      | 5000 | {{%s}}                  |       
 | Mako                | Python     | ✓   | ✓    | ✓      | ✓    | ✓      | 5001 | ${%s}                   |        
 | Tornado             | Python     | ✓   | ✓    | ✓      | ✓    | ✓      | 5002 | {{%s}}                  |        
-| Django              | Python     | ✓   | x    | ×      | ✓    | ×      | 5003 | {{ }}                   |        
+| Django              | Python     | ✓   | ✓    | ×      | ✓    | ×      | 5003 | {{ }}                   |        
 | (code eval)         | Python     | -   | -    | -      | ✓    | -      | 5004 | na                      |        
 | (code exec)         | Python     | -   | -    | -      | ✓    | -      | 5005 | na                      |       
 | Smarty              | PHP        | ✓   | ✓    | ✓~    | ✓    | ✓      | 5020 | {%s}                    |       
@@ -28,14 +28,14 @@ This project has very simple websites to learn how to exploit Server Side Templa
 | Nunjucks            | JavaScript | ✓   | ✓    | ✓      | ✓    | ✓      | 5062 | {{%s}}                  |      
 | doT                 | JavaScript | ×   | ✓    | ✓      | ✓    | ✓      | 5063 | {{=%s}}                 |    
 | Marko               | JavaScript |     |      |        | ×    | ×      | ×    | ×                       |    
-| Dust                | JavaScript | ×   | x    | ✓~      | ✓    | ×      | 5065 | {#%s}or{%s}or{@%s}      |  
+| Dust                | JavaScript | ×   | ✓    | ✓~      | ✓    | ×      | 5065 | {#%s}or{%s}or{@%s}      |  
 | EJS                 | JavaScript | ✓   | ✓    | ✓      | ✓    | ✓      | 5066 | <%= %>                  | 
 | (code eval)         | JavaScript | -   | -    | -      | ✓    | -      | 5067 | na                      | 
 | vuejs               | JavaScript | ✓   | ✓    | ✓~     | ✓    | ✓      | 5068 | {{%s}}                  | 
 | Slim                | Ruby       | ×   | ✓    | x       | ✓    | ✓      | 5080 | #{%s}                   | 
 | ERB                 | Ruby       | ✓   | ✓    | ✓      | ✓    | ✓      | 5081 | <%=%s%>                 | 
 | (code eval)         | Ruby       | -   | -    | -      | ✓    | -      | 5082 | na                      |
-| go                  | go         | x   | x    | x      | ✓    |        | 5090 | na                      |
+| go                  | go         | x   | ✓    | x      | ✓    |        | 5090 | na                      |
 
 
 ✓ - says it is vulnerable/is done
@@ -56,24 +56,26 @@ This project has very simple websites to learn how to exploit Server Side Templa
 |Input inserted in the middle of template code math operations|x|x|✓|6003|
 |Input inserted in the middle of template code text|yes as code injection|x|✓|6005|
 |Non Vulnerable |- |-|-|6004|
+
 All this Severs were made with Mako template engine Due to the exploiting simplicity and the fact that all the scanners detect the vulnerability in the simple case. 
 
 # Generalization tests for SSTI scanners:
 |Test Case | Burp | ZAP | tplmap | port|
 | ---      | ---  | --- |  ---   | ---|
-|{ } Python Eval |✓acha| |✓|6010|
-|${ } Python Eval|✓dete| |✓|6011|
-|{{ }} Python Eval|✓acha| |✓|6012|
+|{ } Python Eval |✓| |✓|6010|
+|${ } Python Eval|✓| |✓|6011|
+|{{ }} Python Eval|✓| |✓|6012|
 |<%=  %> Python Eval|✓ ERB| |x|6013|
 |#{ } Python Eval|x| |x|6014|
 |{{= }} Python Eval|x| |x|6015|
 | | | | | |
-|{ } Ruby Eval |acha | |x|6020|
-|${ } Ruby Eval|code inje ruby | |x|6021|
-|{{ }} Ruby Eval|acha que tem | |YBNE Nunjucks|6022|
-|<%=  %> Ruby Eval|detetou | |✓ Erb|6023|
+|{ } Ruby Eval |✓ | |x|6020|
+|${ } Ruby Eval|✓ | |x|6021|
+|{{ }} Ruby Eval|✓ | |YBNE Nunjucks|6022|
+|<%=  %> Ruby Eval|✓ | |✓ Erb|6023|
 |#{ } Ruby Eval|x | |x|6024|
 |{{= }} Ruby Eval|x | |x|6025|
+
 These tests are used to know if the scanner is able to generalize the tags it knows to other templates that have the same tag
 what these tests do is to replate the template code zones by the evaluations of its content as a template would do.
 
