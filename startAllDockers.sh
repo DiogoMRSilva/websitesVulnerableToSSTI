@@ -7,7 +7,7 @@ fi
 
 #start the website that has a link to the template sites
 cd RunAll
-./runInDocker.sh
+./runInDocker.sh $1
 cd ..
 
 #start all the template sites
