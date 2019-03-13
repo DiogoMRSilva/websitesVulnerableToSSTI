@@ -5,18 +5,24 @@ This project has very simple websites to learn how to exploit Server Side Templa
 # How to use:
 ## Run all the servers inside a single docker
 To run all the servers in a single docker you need to:
-1. Build the docker image by running the script build.sh
-2. Launch the docker Image by running the script run.sh
+1. Build the docker image by running the script `build.sh`
+2. Launch the docker Image by running the script `run.sh`
 
 ## Run all the vulnerable servers each on a separated docker image
-1. Run the script startAllDockersIndividually.sh
+1. Run the script `startAllDockersIndividually.sh`
 
 ## Run a single vulnerable server.
-1. Go to the specific template folder ex: ./ruby/ERB/ 
+1. Go to the specific template folder ex: `./ruby/ERB/` 
 2. Run the script runInDocker.sh
 
 ## To stop all the dockers running in the computer
-1. Run the script stopAllRunningDockers.sh (Be carefull because this will stop your own dockers if you have them)
+1. Run the script `stopAllRunningDockers.sh` (Be carefull because this will stop your own dockers if you have them)
+
+# Docker image
+The docker image is available at https://hub.docker.com/r/d10g0mrs/websites_vuln_to_ssti
+or use command
+`docker run -d -p 127.0.0.1:5000-5100:5000-5100 -p 127.0.0.1:6000-6100:6000-6100 -w /home d10g0mrs/websites_vuln_to_ssti sh ./start_all_services.sh`
+
 
 
 # List of Severs:
