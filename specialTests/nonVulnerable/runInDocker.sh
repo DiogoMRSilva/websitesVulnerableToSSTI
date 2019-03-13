@@ -6,4 +6,4 @@ else
 fi
 
 docker build -t non-vulnerable .
-docker run -d -i -p $IP:6004:5001 -w /home non-vulnerable sh ./run.sh 
+docker run -d -i -p $IP:6004:6004 -w /home non-vulnerable sh ./run.sh 

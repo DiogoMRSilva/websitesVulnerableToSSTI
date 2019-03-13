@@ -6,4 +6,4 @@ else
 fi
 
 docker build -t output-other-page .
-docker run -d -i -p $IP:6001:5001 -w /home output-other-page sh ./run.sh 
+docker run -d -i -p $IP:6001:6001 -w /home output-other-page sh ./run.sh 

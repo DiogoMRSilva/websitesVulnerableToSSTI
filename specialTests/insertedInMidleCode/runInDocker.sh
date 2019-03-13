@@ -6,4 +6,4 @@ else
 fi
 
 docker build -t input-inserted-middle-code .
-docker run -d -i -p $IP:6003:5001 -w /home input-inserted-middle-code sh ./run.sh 
+docker run -d -i -p $IP:6003:6003 -w /home input-inserted-middle-code sh ./run.sh 

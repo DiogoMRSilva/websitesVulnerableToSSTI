@@ -1,3 +1,3 @@
 FROM golang
-EXPOSE 8080
+EXPOSE 5090
 COPY src/ /home

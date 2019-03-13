@@ -7,4 +7,4 @@ fi
 
 
 docker build -t generalization24 .
-docker run -d -i -p $IP:6024:5081 -w /home generalization24 sh ./run.sh 
+docker run -d -i -p $IP:6024:6024 -w /home generalization24 sh ./run.sh 

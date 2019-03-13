@@ -6,4 +6,4 @@ else
 fi
 
 docker build -t generalization1 .
-docker run -d -i -p $IP:6011:5000 -w /home generalization1 sh ./run.sh 
+docker run -d -i -p $IP:6011:6011 -w /home generalization1 sh ./run.sh 

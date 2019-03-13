@@ -1,7 +1,7 @@
 require "sinatra"
 require 'erb'
 
-set :port,5081
+set :port,6024
 set :bind, '0.0.0.0'
 set :show_exceptions, false
 

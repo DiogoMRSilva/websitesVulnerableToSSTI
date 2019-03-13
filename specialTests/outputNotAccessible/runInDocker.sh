@@ -6,4 +6,4 @@ else
 fi
 
 docker build -t output-not-accessible .
-docker run -d -i -p $IP:6002:5001 -w /home output-not-accessible sh ./run.sh 
+docker run -d -i -p $IP:6002:6002 -w /home output-not-accessible sh ./run.sh 

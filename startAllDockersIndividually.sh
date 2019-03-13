@@ -11,7 +11,6 @@ cd RunAll
 cd ..
 
 #start all the template sites
-
 for f in ./**/*/runInDocker.sh
 do
   echo $f
