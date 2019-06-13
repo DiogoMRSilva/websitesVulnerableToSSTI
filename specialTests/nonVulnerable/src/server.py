@@ -14,6 +14,8 @@ def base():
 
 	
     template = '<!DOCTYPE html><html><body>\
+    <h1>THIS IS NOT VULNERABLE TO SSTI</h1>\
+    <br>\
     <form action="/" method="post">\
       First name:<br>\
       <input type="text" name="name" value="">\
