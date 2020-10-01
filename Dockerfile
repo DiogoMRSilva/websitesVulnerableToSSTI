@@ -36,7 +36,7 @@ EXPOSE 5020
 EXPOSE 5021
 EXPOSE 5022
 EXPOSE 5023
-RUN DEBIAN_FRONTEND=noninteractive apt install -q -y php7.2-dev
+RUN DEBIAN_FRONTEND = noninteractive apt install -q -y php7.2-dev
 
 #java servers
 EXPOSE 5051 
