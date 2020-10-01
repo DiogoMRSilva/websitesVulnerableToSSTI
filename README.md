@@ -1,14 +1,14 @@
 
-# Vulnerable websites
+# VULNERABLE_WEBSITES
 This project has very simple websites to learn how to exploit Server Side Template Injections(SSTI). It might also be used to test automated vulnerability scanning tools.Some of the Servers aren't working
 
 # How to use:
-## Run all the servers inside a single docker
-To run all the servers in a single docker you need to:
+## Run all the servers inside a single dock
+To run all the servers in a single dock you need to:
 1. Build the docker image by running the script `build.sh`
 2. Launch the docker Image by running the script `run.sh`
 
-## Run all the vulnerable servers each on a separated docker image
+## Run all the vulnerable servers each on a separated dock image
 1. Run the script `startAllDockersIndividually.sh`
 
 ## Run a single vulnerable server.
