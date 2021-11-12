@@ -3,7 +3,7 @@
     <h1>
     <?php
         if (isset($_POST["expression"])){
-            echo $_POST["expression"].' = '.eval("return ".$_POST["expression"].";");
+            echo $_POST["expression"].' => '.eval("return '".$_POST["expression"]."';");
         }
     ?>
     </h1>
