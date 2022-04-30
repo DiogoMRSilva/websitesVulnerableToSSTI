@@ -44,7 +44,6 @@ or use command
 | Thymeleaf           | Java       | ×   | ✓    | x      | ✓    | x      | 5053 | <p th:text="${%s}"></p> |      
 | Groovy*             | Java       |     |      |        | ×    | ×      | ×    | ×                       |     
 | jade                | Java       |     |      |        | ×    | ×      | ×    | ×                       |     
-| jade                | Nodejs     | ✓   | ✓   | ✓      | ✓    | ✓      | 5061 | #{%s}                   |     
 | Nunjucks            | JavaScript | ✓   | ✓    | ✓      | ✓    | ✓      | 5062 | {{%s}}                  |      
 | doT                 | JavaScript | ×   | ✓    | ✓      | ✓    | ✓      | 5063 | {{=%s}}                 |    
 | Marko               | JavaScript |     |      |        | ×    | ×      | ×    | ×                       |    
@@ -52,6 +51,7 @@ or use command
 | EJS                 | JavaScript | ✓   | ✓    | ✓      | ✓    | ✓      | 5066 | <%= %>                  | 
 | (code eval)         | JavaScript | -   | -    | -      | ✓    | -      | 5067 | na                      | 
 | vuejs               | JavaScript | ✓   | ✓    | ✓~     | ✓    | ✓      | 5068 | {{%s}}                  | 
+| jade                | Nodejs     | ✓   | ✓   | ✓      | ✓    | ✓      | 5069 | #{%s}                   |     
 | Slim                | Ruby       | ×   | ✓    | x       | ✓    | ✓      | 5080 | #{%s}                   | 
 | ERB                 | Ruby       | ✓   | ✓    | ✓      | ✓    | ✓      | 5081 | <%=%s%>                 | 
 | (code eval)         | Ruby       | -   | -    | -      | ✓    | -      | 5082 | na                      |

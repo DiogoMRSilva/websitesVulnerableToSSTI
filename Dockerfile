@@ -45,7 +45,6 @@ EXPOSE 5053
 RUN apt install -y openjdk-8-jdk
 
 #Nodejs servers
-EXPOSE 5061
 EXPOSE 5062
 EXPOSE 5063
 EXPOSE 5064
@@ -53,6 +52,7 @@ EXPOSE 5065
 EXPOSE 5066
 EXPOSE 5067
 EXPOSE 5068
+EXPOSE 5069
 RUN apt install -y nodejs
 RUN apt install -y npm
 

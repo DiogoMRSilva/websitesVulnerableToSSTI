@@ -6,4 +6,4 @@ else
 fi
 
 docker build -t javascript-jade .
-docker run -d  -i -p $IP:5061:5061 -w /home javascript-jade sh ./run.sh 
+docker run -d  -i -p $IP:5069:5069 -w /home javascript-jade sh ./run.sh 
