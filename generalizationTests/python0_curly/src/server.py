@@ -18,7 +18,7 @@ def base():
             person = person.replace(str(match.group()),str(eval_result))
 
 	
-    template = '<!DOCTYPE html><html><body>\
+    template = '<!DOCTYPE html><html> <body>\
     <form action="/" method="post">\
       First name:<br>\
       <input type="text" name="name" value="">\
