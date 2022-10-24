@@ -1,10 +1,7 @@
-# for this we need to install flask
-from crypt import methods
-from flask import *
+from flask import Blueprint, request
 import re
 
-
-app = Flask(__name__)
+generic_template = Blueprint('generic_template', __name__)
 
 basic_template = '<!DOCTYPE html><html> <body>\
 		<form action="" method="post">\
@@ -25,31 +22,31 @@ def getResultOfRequestWith(request, regex):
 		template = basic_template % person
 		return template
 
-@app.route('/curly',methods=['GET', 'POST'])
+@generic_template.route('/curly',methods=['GET', 'POST'])
 def curly():
 		return getResultOfRequestWith(request, r"{(.*?)}")
 
-@app.route('/dollar_curly',methods=['GET', 'POST'])
+@generic_template.route('/dollar_curly',methods=['GET', 'POST'])
 def dollar_curly():
 		return getResultOfRequestWith(request, r"\${(.*?)}")
 
-@app.route('/double_curly',methods=['GET', 'POST'])
+@generic_template.route('/double_curly',methods=['GET', 'POST'])
 def double_curly():
 		return getResultOfRequestWith(request, r"{{(.*?)}}")
 
-@app.route('/less_percentage_equal',methods=['GET', 'POST'])
+@generic_template.route('/less_percentage_equal',methods=['GET', 'POST'])
 def less_percentage_equal():
 		return getResultOfRequestWith(request, r"<%=(.*?)%>")
 
-@app.route('/hash_curly',methods=['GET', 'POST'])
+@generic_template.route('/hash_curly',methods=['GET', 'POST'])
 def hash_curly():
 		return getResultOfRequestWith(request, r"#{(.*?)}")
 
-@app.route('/double_curly_equal',methods=['GET', 'POST'])
+@generic_template.route('/double_curly_equal',methods=['GET', 'POST'])
 def double_curly_equal():
 		 return getResultOfRequestWith(request, r"{{=(.*?)}}")
 
-@app.route('/', methods=['GET','POST'])
+@generic_template.route('/', methods=['GET','POST'])
 def index():
 	return """
 	<!DOCTYPE html><html><head><style>table {
@@ -73,9 +70,5 @@ tr:nth-child(even) {
 <a href="hash_curly">hash_curly</a><br>
 <a href="double_curly_equal">double_curly_equal</a><br>
 
-
 </body></html>
 	""" 
-
-if __name__=="__main__":
-	  app.run("0.0.0.0",port = 6010,debug=False)

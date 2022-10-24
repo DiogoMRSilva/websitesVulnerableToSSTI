@@ -1,27 +1,28 @@
-from flask import *
-app = Flask(__name__)
+from flask import Blueprint, request
+
+python_eval = Blueprint('python_eval', __name__)
 
 template = """<!DOCTYPE html><html><body>\
     <h1>Online Calculator</h1>\
-    <form action="/" method="post">\
+    <form action="" method="post">\
       expression:<br>\
       <input type="text" name="expression" value="">\
       <input type="submit" value="Submit">\
     </form>
     
-    <form action="/evalDoubleQuoted" method="post">\
+    <form action="evalDoubleQuoted" method="post">\
       expression:<br>\
       <input type="text" name="expression" value="">\
       <input type="submit" value="Submit">\
     </form>
 
-    <form action="/evalQuoted" method="post">\
+    <form action="evalQuoted" method="post">\
       expression:<br>\
       <input type="text" name="expression" value="">\
       <input type="submit" value="Submit">\
     </form>
 
-    <form action="/evalMiddleMathOp" method="post">\
+    <form action="evalMiddleMathOp" method="post">\
       expression:<br>\
       <input type="text" name="expression" value="">\
       <input type="submit" value="Submit">\
@@ -29,14 +30,14 @@ template = """<!DOCTYPE html><html><body>\
     
     <h2>%s </h2></body></html>"""
 
-@app.route('/',methods=['GET'])
-def baseGet():
-    return template % "SEND INPUT"
 
-@app.route('/',methods=['POST'])
+@python_eval.route('/',methods=['GET', 'POST'])
 def base():
-    if request.method == 'POST':
-      if request.form['expression']:
+    if request.method == 'GET':
+      return template % "SEND INPUT"
+    
+    expression = ""
+    if request.form['expression']:
         expression = request.form['expression']
     result = ""
     try:
@@ -47,10 +48,10 @@ def base():
     html = template % result
     return html
 
-@app.route('/evalDoubleQuoted',methods=['POST'])
+@python_eval.route('/evalDoubleQuoted',methods=['POST'])
 def evalDoubleQuoted():
-    if request.method == 'POST':
-      if request.form['expression']:
+    expression = ""
+    if request.form['expression']:
         expression = request.form['expression']
     result = ""
     try:
@@ -61,10 +62,10 @@ def evalDoubleQuoted():
     html = template % result
     return html
 
-@app.route('/evalQuoted',methods=['POST'])
+@python_eval.route('/evalQuoted',methods=['POST'])
 def evalQuoted():
-    if request.method == 'POST':
-      if request.form['expression']:
+    expression = ""
+    if request.form['expression']:
         expression = request.form['expression']
     result = ""
     try:
@@ -75,10 +76,10 @@ def evalQuoted():
     html = template % result
     return html
 
-@app.route('/evalMiddleMathOp',methods=['POST'])
+@python_eval.route('/evalMiddleMathOp',methods=['POST'])
 def evalMiddleMathOp():
-    if request.method == 'POST':
-      if request.form['expression']:
+    expression = ""
+    if request.form['expression']:
         expression = request.form['expression']
     result = ""
     try:
@@ -88,6 +89,3 @@ def evalMiddleMathOp():
 
     html = template % result
     return html
-
-if __name__=="__main__":
-	app.run("0.0.0.0",port = 5004,debug=False)

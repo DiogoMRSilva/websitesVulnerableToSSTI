@@ -148,6 +148,45 @@ post "/double_curly_equal" do
   getHTML(name, re, reWithout)
 end
 
+def getEvalHTML(expression)
+
+  html = '<!DOCTYPE html><html>
+    <body>
+      <h1>Online Calculator</h1>
+      <form action="" method="post">
+          expression:<br>
+          <input type="text" name="expression" value="">
+          <input type="submit" value="Submit">
+      </form>
+      <h2>'
+      
+  if(expression != nil && expression != "" )
+    html += expression.to_s + ' = ' + eval(expression).to_s
+  end
+  html +='
+      </h2>
+    </body>
+  </html>'
+
+  return html
+end
+
+get "/eval" do
+  expression =""
+  if(params["expression"]!= nil)
+    expression =params['expression']
+  end
+  getEvalHTML(expression)
+end
+
+post "/eval" do
+  expression =""
+  if(params["expression"]!= nil)
+    expression =params['expression']
+  end
+  getEvalHTML(expression)
+end
+
 indexText = '
 <!DOCTYPE html><html><body>
 <a href="curly">curly</a><br>
@@ -156,6 +195,7 @@ indexText = '
 <a href="less_percentage_equal">less_percentage_equal</a><br>
 <a href="hash_curly">hash_curly</a><br>
 <a href="double_curly_equal">double_curly_equal</a><br>
+<a href="eval">eval</a><br>
 </body></html>'
 
 get "/" do
