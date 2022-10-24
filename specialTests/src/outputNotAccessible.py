@@ -1,11 +1,9 @@
-# for this we need to install flask
-from flask import *
+from flask import Blueprint, request
 from mako.template import Template
 
+outputNotAccessible = Blueprint('outputNotAccessible', __name__)
 
-app = Flask(__name__)
-
-@app.route('/',methods=['GET', 'POST'])
+@outputNotAccessible.route('/',methods=['GET', 'POST'])
 def base():
     person = ""
     message = ""
@@ -18,7 +16,7 @@ def base():
         complaint: %s </h2></body></html>' % person
 
     template = '<!DOCTYPE html><html><body>\
-    <form action="/" method="post">\
+    <form action="" method="post">\
       Complaint:<br>\
       <input type="text" name="name" value="">\
       <input type="submit" value="Submit">\
@@ -27,7 +25,3 @@ def base():
     email_to_admin = Template(reclamation).render()
     
     return template
-
-
-if __name__=="__main__":
-	app.run("0.0.0.0",port = 6002,debug=False)

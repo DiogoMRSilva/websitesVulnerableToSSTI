@@ -1,11 +1,9 @@
-# for this we need to install flask
-from flask import *
+from flask import Blueprint, request
 from mako.template import Template
 
+resultOtherPage = Blueprint('resultOtherPage', __name__)
 
-app = Flask(__name__)
-
-@app.route('/',methods=['GET', 'POST'])
+@resultOtherPage.route('/',methods=['GET', 'POST'])
 def base():
     person = ""
     message = ""
@@ -18,18 +16,18 @@ def base():
         f.close()
 	
     template = '<!DOCTYPE html><html><body>\
-    <form action="/" method="post">\
+    <form action="" method="post">\
       First name:<br>\
       <input type="text" name="name" value="">\
       <input type="submit" value="Submit">\
     </form><h2>%s </h2>\
-    <a href="/stored">Check stored name.</a>\
+    <a href="stored">Check stored name.</a>\
     </body></html>' % message
 
 
     return Template(template).render(data="world")
 
-@app.route('/stored',methods=['GET', 'POST'])
+@resultOtherPage.route('/stored',methods=['GET', 'POST'])
 def stored():
     f = open("storage.txt", "r")
     name = f.read()
@@ -39,7 +37,3 @@ def stored():
     </form><h2>Stored name: %s </h2>\
     </body></html>' % name
     return Template(template).render(data="world")
-
-
-if __name__=="__main__":
-	app.run("0.0.0.0",port = 6001,debug=False)
