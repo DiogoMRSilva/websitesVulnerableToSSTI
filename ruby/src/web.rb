@@ -1,5 +1,6 @@
 require "sinatra"
 require 'erb'
+require "slim"
 
 set :port, 6020
 set :bind, '0.0.0.0'
@@ -187,6 +188,70 @@ post "/eval" do
   getEvalHTML(expression)
 end
 
+def getHTMLERBRendered(name)
+  text = '<!DOCTYPE html><html><body>
+  <form action="" method="post">
+    First name:<br>
+    <input type="text" name="name" value="">
+    <input type="submit" value="Submit">
+  </form><h2>Hello '+name+'</h2></body></html>'
+  template = ERB.new(text)
+  return template.result(binding)
+
+end
+
+get "/erb" do
+  name =""
+  if(params["name"]!= nil)
+    name =params['name']
+  end
+  getHTMLERBRendered(name)
+end
+
+post "/erb" do
+  name =""
+  if(params["name"]!= nil)
+    name =params['name']
+  end
+  getHTMLERBRendered(name)
+end
+
+def getHTMLSlimRendered(name)
+  correct_form = <<-slim
+    <html>
+      head
+        title Example
+      <body>
+        <p>#{name}</p>
+      </body>
+    </html>
+  slim
+
+  template = '<!DOCTYPE html><html><body>
+  <form action="" method="post">
+    First name:<br>
+    <input type="text" name="name" value="">
+    <input type="submit" value="Submit">
+  </form><h2>Hello '+name+'</h2></body></html>'
+  return Slim::Template.new{ template }.render
+end
+
+get "/slim" do
+  name =""
+  if(params["name"]!= nil)
+    name =params['name']
+  end
+  getHTMLSlimRendered(name)
+end
+
+post "/slim" do
+  name =""
+  if(params["name"]!= nil)
+    name =params['name']
+  end
+  getHTMLSlimRendered(name)
+end
+
 indexText = '
 <!DOCTYPE html><html><body>
 <a href="curly">curly</a><br>
@@ -196,6 +261,8 @@ indexText = '
 <a href="hash_curly">hash_curly</a><br>
 <a href="double_curly_equal">double_curly_equal</a><br>
 <a href="eval">eval</a><br>
+<a href="erb">erb template engine</a><br>
+<a href="slim">slim template engine</a><br>
 </body></html>'
 
 get "/" do
