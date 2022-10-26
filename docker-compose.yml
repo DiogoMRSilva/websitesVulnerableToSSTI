@@ -1,0 +1,39 @@
+version: '3'
+services:
+  index:
+    build: ./index/
+    ports:
+     - "${IP}:4000:80"
+  go:
+    build: ./go/goTemplate/
+    ports:
+     - "${IP}:5090:5090"
+  java:
+    build: ./java/springBased/
+    ports:
+      - "${IP}:5051:5051"
+  python-flask-based:
+    build: ./python/flaskBasedTests/
+    ports:
+      - "${IP}:6003:6003"
+  python-tornado:
+    build: ./python/python-Tornado/
+    ports:
+      - "${IP}:5002:5002"
+  python-django:
+    build: ./python/python-django/
+    ports:
+     - "${IP}:5003:5003"
+  javascript:
+    build: ./javascript/
+    ports:
+     - "${IP}:5063:5063"
+  php:
+    build: ./php/
+    ports:
+     - "${IP}:5023:80"
+  ruby:
+    build: ./ruby/
+    ports:
+     - "${IP}:6020:6020"
+

@@ -6,4 +6,4 @@ else
 fi
 
 docker build -t python-tornado .
-docker run -d -i -p $IP:5002:5002 -w /home python-tornado sh ./run.sh 
+docker run -d -p $IP:5002:5002 python-tornado

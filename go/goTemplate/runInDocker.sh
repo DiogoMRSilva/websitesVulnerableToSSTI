@@ -6,4 +6,4 @@ else
 fi
 
 docker build -t go-template .
-docker run -d  -i -p $IP:5090:5090 -w /home go-template sh ./run.sh 
+docker run -d -p $IP:5090:5090 go-template
