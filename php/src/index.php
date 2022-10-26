@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <body>
-    <a href="smarty">smarty</a>
-    <a href="twig">twig</a>
-    <a href="eval">eval</a>
+    <a href="smarty">smarty</a><br>
+    <a href="twig">twig</a><br>
+    <a href="eval">eval</a><br>
     </body>
 </html>

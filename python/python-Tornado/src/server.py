@@ -8,7 +8,7 @@ import tornado.template
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
         self.write('<!DOCTYPE html><html><body>\
-    <form action="/" method="post">\
+    <form action="" method="post">\
       First name:<br>\
       <input type="text" name="name" value="">\
       <input type="submit" value="Submit">\
@@ -17,7 +17,7 @@ class MainHandler(tornado.web.RequestHandler):
         person = ""
         person = self.get_body_argument("name",default="")
         t = tornado.template.Template('<!DOCTYPE html><html><body>\
-    <form action="/" method="post">\
+    <form action="" method="post">\
       First name:<br>\
       <input type="text" name="name" value="">\
       <input type="submit" value="Submit">\

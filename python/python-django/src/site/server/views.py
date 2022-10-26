@@ -15,7 +15,7 @@ def index(request):
         person = request.GET.get('name', "")
 
     template_code = '<!DOCTYPE html><html><body>\
-    <form action="/" method="post">\
+    <form action="" method="post">\
       First name:<br>\
       <input type="text" name="name" value="">\
       <input type="submit" value="Submit">\
