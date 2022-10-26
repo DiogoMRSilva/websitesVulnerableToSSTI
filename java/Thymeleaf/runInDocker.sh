@@ -6,4 +6,4 @@ else
 fi
 
 docker build -t java-thymeleaf .
-docker run -d  -i -p $IP:5053:5053 -w /home java-thymeleaf sh ./run.sh 
+docker run -d -p $IP:5053:5053 java-thymeleaf

@@ -6,4 +6,4 @@ else
 fi
 
 docker build -t java-velocity .
-docker run -d  -i -p $IP:5052:5052 -w /home java-velocity sh ./run.sh 
+docker run -d -p $IP:5052:5052 java-velocity

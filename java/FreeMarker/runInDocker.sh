@@ -6,4 +6,4 @@ else
 fi
 
 docker build -t java-freemarker .
-docker run -d  -i -p $IP:5051:5051 -w /home java-freemarker sh ./run.sh 
+docker run -d -p $IP:5051:5051 java-freemarker

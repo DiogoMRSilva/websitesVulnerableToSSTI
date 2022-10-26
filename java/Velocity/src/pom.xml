@@ -9,51 +9,49 @@
   <packaging>jar</packaging>
   
   <build>
-  <finalName>server</finalName>
-  	<plugins>
-  	  <plugin>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-maven-plugin</artifactId>
-          <configuration>
-              <fork>true</fork>
-              <mainClass>SpringBootServer</mainClass>
-          </configuration>
-            <executions>
-              <execution>
-              <phase>package</phase>
-                <goals>
-                  <goal>repackage</goal>
-                </goals>
-              </execution>
-          </executions>
+    <finalName>server</finalName>
+      <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <fork>true</fork>
+                <mainClass>SpringBootServer</mainClass>
+            </configuration>
+              <executions>
+                <execution>
+                <phase>package</phase>
+                  <goals>
+                    <goal>repackage</goal>
+                  </goals>
+                </execution>
+            </executions>
+        </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+          <executions>
+            <execution>
+              <goals>
+                <goal>attached</goal>
+              </goals>
+            <phase>package</phase>
+              <configuration>
+                <descriptorRefs>
+                  <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+                <archive>
+                  <manifest>
+                    <mainClass>SpringBootServer</mainClass>
+                  </manifest>
+                </archive>
+              </configuration>
+          </execution>
+        </executions>
       </plugin>
-	  <plugin>
-		  <groupId>org.apache.maven.plugins</groupId>
-		  <artifactId>maven-assembly-plugin</artifactId>
-		    <executions>
-		      <execution>
-		         <goals>
-		           <goal>attached</goal>
-		         </goals>
-					<phase>package</phase>
-		         <configuration>
-		           <descriptorRefs>
-		             <descriptorRef>jar-with-dependencies</descriptorRef>
-		          </descriptorRefs>
-		          <archive>
-		            <manifest>
-		              <mainClass>SpringBootServer</mainClass>
-		            </manifest>
-		          </archive>
-		        </configuration>
-		     </execution>
-		  </executions>
-		</plugin>
-      
-	</plugins>
-  
+    </plugins>
   </build>
-  
+
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
@@ -65,14 +63,10 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
-	<dependency>
-	    <groupId>org.apache.velocity</groupId>
-	    <artifactId>velocity</artifactId>
-	    <version>1.7</version>
-	</dependency>
-    
+    <dependency>
+        <groupId>org.apache.velocity</groupId>
+        <artifactId>velocity</artifactId>
+        <version>1.7</version>
+    </dependency>
   </dependencies>
-  
-  
-  
 </project>
