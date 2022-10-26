@@ -12,20 +12,13 @@ To run all the servers in a single docker you need to:
 1. Run the script `startAllDockersIndividually.sh`
 
 ## Run a single vulnerable server.
-1. Go to the specific template folder ex: `./ruby/ERB/` 
+1. Go to the specific template folder ex: `./ruby/` 
 2. Run the script runInDocker.sh
 
 ## To stop all the dockers running in the computer
 1. Run the script `stopAllRunningDockers.sh` (Be carefull because this will stop your own dockers if you have them)
 
-# Docker image
-The docker image is available at https://hub.docker.com/r/d10g0mrs/websites_vuln_to_ssti
-or use command
-`docker run -d -p 127.0.0.1:5000-5100:5000-5100 -p 127.0.0.1:6000-6100:6000-6100 -w /home d10g0mrs/websites_vuln_to_ssti sh ./start_all_services.sh`
-
-
-
-# List of Severs:
+# List of Severs(NEEDS UPDATE):
 
 | Engine              |Language  |Burp|ZAP|tplmap|working|known exploit|port| tags                    |
 | ---                 |---       |--- |---| ---  | ---   | ---         | ---| ---                     | 
@@ -68,7 +61,7 @@ or use command
 
 ✓~ -found but says not exploitable
 
-# Special tests for SSTI scanners:
+# Special tests for SSTI scanners (NEEDS UPDATE):
 |Test Case                                                               |Burp|ZAP|tplmap|port|
 | ---                                                                    |--- |---| ---  | ---|
 |Input rendered in other location                                        | x  | ✓ | x    |6001|
@@ -79,7 +72,7 @@ or use command
 
 All this Severs were made with Mako template engine Due to the exploiting simplicity and the fact that all the scanners detect the vulnerability in the simple case. 
 
-# Generalization tests for SSTI scanners:
+# Generalization tests for SSTI scanners (NEEDS UPDATE):
 |Test Case          |Burp |ZAP| tplmap      |port|
 | ---               |---  |---|  ---        | ---|
 |{ } Python Eval    |✓    |   | ✓           |6010|
