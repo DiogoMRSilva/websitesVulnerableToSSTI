@@ -29,17 +29,17 @@ def index():
 	return """
 	<!DOCTYPE html><html><body>
 
-<a href="insertedInMiddleCodeText">insertedInMiddleCodeText</a><br>
-<a href="insertInMiddleCode">insertInMiddleCode</a><br>
-<a href="nonVulnerable">nonVulnerable</a><br>
-<a href="outputNotAccessible">outputNotAccessible</a><br>
-<a href="resultOtherPage">resultOtherPage</a><br>
-<a href="python_exec">python_exec</a><br>
-<a href="python_eval">python_eval</a><br>
-<a href="generic_template">generic_template</a><br>
-<a href="jinja2">jinja2</a><br>
-<a href="mako">mako</a><br>
-<a href="makoWithSimpleFilter">makoWithSimpleFilter</a><br>
+<a href="insertedInMiddleCodeText/">insertedInMiddleCodeText</a><br>
+<a href="insertInMiddleCode/">insertInMiddleCode</a><br>
+<a href="nonVulnerable/">nonVulnerable</a><br>
+<a href="outputNotAccessible/">outputNotAccessible</a><br>
+<a href="resultOtherPage/">resultOtherPage</a><br>
+<a href="python_exec/">python_exec</a><br>
+<a href="python_eval/">python_eval</a><br>
+<a href="generic_template/">generic_template</a><br>
+<a href="jinja2/">jinja2</a><br>
+<a href="mako/">mako</a><br>
+<a href="makoWithSimpleFilter/">makoWithSimpleFilter</a><br>
 
 </body></html>
 	""" 

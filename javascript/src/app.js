@@ -20,7 +20,7 @@ app.get('/', (request, response) => {
     <!DOCTYPE html>
     <html>
         <body>
-            <a href="eval">eval</a><br>
+            <a href="eval">eval/</a><br>
             <a href="dot">dot</a><br>
             <a href="jade">jade</a><br>
             <a href="dust">dust</a><br>

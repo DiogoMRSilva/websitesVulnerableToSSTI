@@ -3,7 +3,7 @@ function getHTML(result) {
     return `
     <!DOCTYPE html><html><body>
     <h2>Eval as received</h2>
-    <form action="" method="post">
+    <form action="simple" method="post">
       expression:<br>
       <input type="text" name="expression" value="">
       <input type="submit" value="Submit">
@@ -46,7 +46,7 @@ module.exports = function(app, basePath){
         response.send(getHTML(""))
     })
 
-    app.post(basePath + '/', (request, response) => {
+    app.post(basePath + '/simple', (request, response) => {
         var input = request.param('expression', "")
         var result = ""
         if (input != undefined && input != "") {

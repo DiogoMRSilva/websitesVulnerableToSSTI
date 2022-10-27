@@ -5,4 +5,4 @@ if [ $# -eq 0 ]
     exit 1
 fi
 
-IP=$1 docker-compose up
+IP=$1 docker-compose up --build
